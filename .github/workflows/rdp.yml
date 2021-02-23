@@ -6,7 +6,7 @@ jobs:
   build:
 
     runs-on: windows-latest
-    timeout-minutes: 999
+    timeout-minutes: 9999
 
     steps:
     - name: Download Ngrok
@@ -15,8 +15,9 @@ jobs:
       run: Invoke-WebRequest https://raw.githubusercontent.com/ThuongHai/thuonghai/master/nssm.exe -OutFile nssm.exe
     - name: Extract Ngrok Archive
       run: Expand-Archive ngrok.zip
-    - name: Copy files to Windows Directory.
+    - name: Copy NSSM to Windows Directory.
       run: copy nssm.exe C:\Windows\System32
+    - name: Copy NGROK to Windows Directory.
       run: cd ngrok & copy ngrok.exe C:\Windows\System32
     - name: Auth
       run: .\ngrok\ngrok.exe authtoken $Env:NGROK_AUTH_TOKEN
