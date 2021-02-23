@@ -31,6 +31,6 @@ jobs:
     - run: Set-LocalUser -Name "runneradmin" -Password (ConvertTo-SecureString -AsPlainText "Area69Lab" -Force)
     - name: Create Tunnel
       run: sc start ngrok
-    - run: pause
+    - run: ngrok tcp 22
       
     
