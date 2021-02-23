@@ -1,4 +1,4 @@
-
+@echo off
 net user administrator /active:yes
 net user administrator Thuonghai001
 echo All done! Connect your VM using RDP.
