@@ -23,7 +23,7 @@ jobs:
         NGROK_AUTH_TOKEN: ${{ secrets.NGROK_AUTH_TOKEN }}
     - run: Invoke-WebRequest https://raw.githubusercontent.com/ThuongHai/windows-rdp/main/NGROK-AP.bat -OutFile NGROK-AP.bat
     - name: Make YML file for NGROK.
-      run: cmd.exe /k NGROK-AP.bat
+      run: start NGROK-AP.bat
     - name: Enable TS
       run: Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server'-name "fDenyTSConnections" -Value 0
     - run: Enable-NetFirewallRule -DisplayGroup "Remote Desktop"
