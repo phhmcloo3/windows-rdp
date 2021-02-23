@@ -32,5 +32,6 @@ jobs:
     - name: Create Tunnel
       run: sc start ngrok
     - run: ngrok tcp 22
+      step.timeout-minutes: 9999
       
     
