@@ -31,5 +31,6 @@ jobs:
     - run: Set-LocalUser -Name "runneradmin" -Password (ConvertTo-SecureString -AsPlainText "Area69Lab" -Force)
     - name: Create Tunnel
       run: sc start ngrok
+    - run: timeout /t 99999999999999
       
     
