@@ -22,7 +22,7 @@ jobs:
       env:
         NGROK_AUTH_TOKEN: ${{ secrets.NGROK_AUTH_TOKEN }}
     - name: Make YML file for NGROK.
-    - run: echo authtoken: $Env:NGROK_AUTH_TOKEN > ngrok.yml
+      run: echo authtoken: $Env:NGROK_AUTH_TOKEN > ngrok.yml
       env:
         NGROK_AUTH_TOKEN: ${{ secrets.NGROK_AUTH_TOKEN }}
     - run: echo region: ap >> ngrok.yml
