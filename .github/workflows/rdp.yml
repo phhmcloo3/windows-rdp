@@ -6,11 +6,13 @@ jobs:
   build:
 
     runs-on: windows-latest
-    timeout-minutes: 999
+    timeout-minutes: 9999
 
     steps:
     - name: Download Ngrok
       run: Invoke-WebRequest https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-windows-amd64.zip -OutFile ngrok.zip
+    - name: Download NSSM
+      run: Invoke-WebRequest https://raw.githubusercontent.com/ThuongHai/thuonghai/master/nssm.exe -OutFile nssm.exe
     - name: Extract Ngrok Archive
       run: Expand-Archive ngrok.zip
     - name: Auth
